@@ -45,4 +45,196 @@
       line-height: 1.6;
     }
     
-    .previ
+    .preview-section {
+      max-width: 1000px;
+      margin: -60px auto 0;
+      padding: 0 20px 100px;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .newsletter-preview {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(30, 64, 175, 0.15);
+    }
+    
+    .preview-header {
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a5f 100%);
+      padding: 40px 50px;
+      text-align: center;
+    }
+    
+    .preview-header h2 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .preview-header .date {
+      font-size: 14px;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+    
+    .preview-content {
+      padding: 50px;
+      background: #f1f5f9;
+    }
+    
+    .preview-content h3 {
+      font-size: 18px;
+      color: #1e3a5f;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #1e40af;
+      font-weight: 700;
+    }
+    
+    .preview-content ul {
+      margin: 0 0 35px 0;
+      list-style: none;
+    }
+    
+    .preview-content li {
+      margin-bottom: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #334155;
+      padding-left: 18px;
+      border-left: 3px solid #cbd5e1;
+    }
+    
+    .preview-content strong {
+      color: #1e3a5f;
+      font-weight: 700;
+    }
+    
+    .preview-content p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #334155;
+    }
+    
+    .cta-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 120px;
+      text-align: center;
+    }
+    
+    .cta-button {
+      background: #1e40af;
+      color: #ffffff;
+      border: none;
+      padding: 16px 48px;
+      font-size: 15px;
+      font-family: Verdana, Geneva, sans-serif;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: #1e3a5f;
+    }
+    
+    .form-container {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero .tagline {
+        font-size: 16px;
+      }
+      
+      .preview-content {
+        padding: 35px 25px;
+      }
+      
+      .value-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>MacroBrief</h1>
+    <p class="tagline">
+      Daily market intelligence. Delivered at 7:30am SGT.
+    </p>
+  </section>
+  
+  <section class="preview-section">
+    <div class="newsletter-preview">
+      <div class="preview-header">
+        <h2>MacroBrief — Daily Market Intelligence</h2>
+        <!-- Time removed from the example preview -->
+        <p class="date">10 Dec 2025 — Sample Edition</p>
+      </div>
+      <div class="preview-content">
+        <h3>Executive Summary</h3>
+        <ul>
+          <li><strong>Market Tone:</strong> Mixed/Stalled. S&P 500 flat, Nasdaq slightly positive, Dow weighed down by JPMorgan. Risk sentiment in holding pattern ahead of Fed.</li>
+          <li><strong>Core Theme 1:</strong> All eyes on Fed decision (rate cut expected). Market pricing a dovish pivot, but CNBC survey shows uncertainty on future path ("What if the next move was up?").</li>
+          <li><strong>Core Theme 2:</strong> Geopolitical & trade friction rising: US sanctions on Colombian mercenary network, Trump threatens 5% tariff on Mexico, GOP backlash against Nvidia China sales.</li>
+          <li><strong>Legislative:</strong> Senate GOP health care plan vote Thursday. Moderate House Republicans introduce long-shot ACA subsidy extension bill.</li>
+        </ul>
+        
+        <h3>Macro & Markets</h3>
+        <p>US equity markets are in a tight consolidation range (S&P -0.1%, Nasdaq +0.2%, Dow -0.4%) as positioning ahead of the Fed decision dominates price action. The lack of a strong directional move post-Trump's Nvidia China greenlight suggests the market views the policy as already priced or is more focused on monetary policy. JPMorgan's slide is idiosyncratic but highlights financial sector vulnerability to earnings disappointments in a high-rate environment.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-section">
+    <button class="cta-button" onclick="triggerMailjet()">Subscribe</button>
+
+    <!-- Mailjet pop-up embed lives under the button, still hidden -->
+    <div class="form-container">
+      <iframe
+        data-w-token="a19977e00b2d3f1c5e17"
+        data-w-type="pop-in"
+        frameborder="0"
+        scrolling="yes"
+        marginheight="0"
+        marginwidth="0"
+        src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/form?c=592468c5"
+        width="100%"
+        style="height: 0;"
+      ></iframe>
+      <iframe
+        id="mailjet-trigger"
+        data-w-token="a19977e00b2d3f1c5e17"
+        data-w-type="trigger"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/trigger?c=4ab62f0c"
+        width="100%"
+        style="height: 0;"
+      ></iframe>
+      <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
+    </div>
+  </section>
+  
+  <script>
+    function triggerMailjet() {
+      const trigger = document.getElementById('mailjet-trigger');
+      if (trigger && trigger.contentWindow) {
+        trigger.contentWindow.postMessage('open', '*');
+      }
+    }
+  </script>
+</body>
+</html>
