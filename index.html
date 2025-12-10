@@ -33,16 +33,7 @@
       font-size: 48px;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 16px;
       letter-spacing: -1px;
-    }
-    
-    .hero .tagline {
-      font-size: 16px;
-      color: #cbd5e1;
-      font-weight: 400;
-      max-width: 600px;
-      line-height: 1.6;
     }
     
     .preview-section {
@@ -62,12 +53,12 @@
     
     .preview-header {
       background: linear-gradient(135deg, #1e3a5f 0%, #55575d 100%);
-      padding: 40px 50px;
+      padding: 30px 50px;
       text-align: center;
     }
     
-    .preview-header h2 {
-      font-size: 28px;
+    .preview-header h3 {
+      font-size: 20px;
       color: #ffffff;
       margin-bottom: 10px;
       font-weight: 700;
@@ -142,26 +133,13 @@
       background: #1e3a5f;
     }
     
-    .form-container {
-      display: none;
-    }
-    
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 36px;
       }
       
-      .hero .tagline {
-        font-size: 16px;
-      }
-      
       .preview-content {
         padding: 35px 25px;
-      }
-      
-      .value-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
       }
     }
   </style>
@@ -169,21 +147,18 @@
 <body>
   <section class="hero">
     <h1>MacroBrief</h1>
-    </p>
   </section>
   
   <section class="preview-section">
     <div class="newsletter-preview">
       <div class="preview-header">
-        <h2>Daily Market Intelligence</h2>
+        <h3>Daily Market Intelligence</h3>
         <p class="date">10 Dec 2025</p>
       </div>
       <div class="preview-content">
         <h3>Executive Summary</h3>
         <ul>
           <li><strong>Market Tone:</strong> Mixed/Stalled. S&P 500 flat, Nasdaq slightly positive, Dow weighed down by JPMorgan. Risk sentiment in holding pattern ahead of Fed.</li>
-          <li><strong>Core Theme 1:</strong> All eyes on Fed decision (rate cut expected). Market pricing a dovish pivot, but CNBC survey shows uncertainty on future path ("What if the next move was up?").</li>
-          <li><strong>Core Theme 2:</strong> Geopolitical & trade friction rising: US sanctions on Colombian mercenary network, Trump threatens 5% tariff on Mexico, GOP backlash against Nvidia China sales.</li>
           <li><strong>Legislative:</strong> Senate GOP health care plan vote Thursday. Moderate House Republicans introduce long-shot ACA subsidy extension bill.</li>
         </ul>
         
@@ -194,22 +169,25 @@
   </section>
   
   <section class="cta-section">
-    <button class="cta-button" onclick="triggerMailjet()">Subscribe</button>
+    <button class="cta-button" id="subscribe-btn">Subscribe</button>
   </section>
   
-  <div class="form-container">
-    <iframe data-w-token="8adff89747cb9aa9533a" data-w-type="pop-in" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/form?c=592468c5" width="100%" style="height: 0;"></iframe>
-    <iframe id="mailjet-trigger" data-w-token="8adff89747cb9aa9533a" data-w-type="trigger" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/trigger?c=4ab62f0c" width="100%" style="height: 0;"></iframe>
-    <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
-  </div>
+  <iframe data-w-token="8adff89747cb9aa9533a" data-w-type="pop-in" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/form?c=592468c5" width="100%" style="height: 0;"></iframe>
+  <iframe data-w-token="8adff89747cb9aa9533a" data-w-type="trigger" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/trigger?c=4ab62f0c" width="100%" style="height: 0;"></iframe>
+  <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
   
   <script>
-    function triggerMailjet() {
-      const trigger = document.getElementById('mailjet-trigger');
-      if (trigger && trigger.contentWindow) {
-        trigger.contentWindow.postMessage('open', '*');
-      }
-    }
+    // Wait for Mailjet script to load
+    window.addEventListener('load', function() {
+      const subscribeBtn = document.getElementById('subscribe-btn');
+      
+      subscribeBtn.addEventListener('click', function() {
+        // Trigger Mailjet popup using their API
+        if (window.MjPopIn) {
+          window.MjPopIn.show();
+        }
+      });
+    });
   </script>
 </body>
 </html>
