@@ -116,21 +116,15 @@
       text-align: center;
     }
     
-    .cta-button {
-      background: #1e40af;
-      color: #ffffff;
-      border: none;
-      padding: 16px 48px;
-      font-size: 15px;
-      font-family: Verdana, Geneva, sans-serif;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    /* Style the Mailjet button */
+    iframe[data-w-type="trigger"] {
+      height: auto !important;
+      min-height: 50px !important;
     }
     
-    .cta-button:hover {
-      background: #1e3a5f;
+    /* Target the Mailjet button inside iframe - this requires the button to inherit our styles */
+    .cta-section {
+      /* Style will be applied via inline styles to Mailjet iframe content */
     }
     
     @media (max-width: 768px) {
@@ -169,42 +163,18 @@
   </section>
   
   <section class="cta-section">
-    <button class="cta-button" id="subscribe-btn">Subscribe</button>
+    <iframe data-w-token="8adff89747cb9aa9533a" data-w-type="trigger" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/trigger?c=4ab62f0c" style="width: 100%; height: 60px;"></iframe>
   </section>
   
+  <iframe data-w-token="8adff89747cb9aa9533a" data-w-type="pop-in" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://1szoz.mjt.lu/wgt/1szoz/0u1v/form?c=592468c5" width="100%" style="height: 0;"></iframe>
   <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
   
-  <script>
-    document.getElementById('subscribe-btn').addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Create and trigger the Mailjet widgets programmatically
-      if (!document.getElementById('mj-w-iframe-8adff89747cb9aa9533a')) {
-        // Add the pop-in iframe
-        const popinIframe = document.createElement('iframe');
-        popinIframe.setAttribute('data-w-token', '8adff89747cb9aa9533a');
-        popinIframe.setAttribute('data-w-type', 'pop-in');
-        popinIframe.setAttribute('frameborder', '0');
-        popinIframe.setAttribute('scrolling', 'yes');
-        popinIframe.setAttribute('marginheight', '0');
-        popinIframe.setAttribute('marginwidth', '0');
-        popinIframe.setAttribute('src', 'https://1szoz.mjt.lu/wgt/1szoz/0u1v/form?c=592468c5');
-        popinIframe.style.cssText = 'height: 0; width: 100%;';
-        document.body.appendChild(popinIframe);
-        
-        // Wait a moment for iframe to load then trigger
-        setTimeout(function() {
-          if (window.MjPopIn) {
-            window.MjPopIn.show();
-          }
-        }, 500);
-      } else {
-        // If already loaded, just show it
-        if (window.MjPopIn) {
-          window.MjPopIn.show();
-        }
-      }
-    });
-  </script>
+  <style>
+    /* Override Mailjet button styles */
+    iframe[data-w-type="trigger"] {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </body>
 </html>
