@@ -158,11 +158,6 @@
       .preview-content {
         padding: 35px 25px;
       }
-      
-      .value-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
     }
   </style>
 </head>
@@ -178,20 +173,22 @@
     <div class="newsletter-preview">
       <div class="preview-header">
         <h2>MacroBrief — Daily Market Intelligence</h2>
-        <!-- Time removed from the example preview -->
+
+        <!-- TIME REMOVED -->
         <p class="date">10 Dec 2025 — Sample Edition</p>
       </div>
+
       <div class="preview-content">
         <h3>Executive Summary</h3>
         <ul>
-          <li><strong>Market Tone:</strong> Mixed/Stalled. S&P 500 flat, Nasdaq slightly positive, Dow weighed down by JPMorgan. Risk sentiment in holding pattern ahead of Fed.</li>
-          <li><strong>Core Theme 1:</strong> All eyes on Fed decision (rate cut expected). Market pricing a dovish pivot, but CNBC survey shows uncertainty on future path ("What if the next move was up?").</li>
-          <li><strong>Core Theme 2:</strong> Geopolitical & trade friction rising: US sanctions on Colombian mercenary network, Trump threatens 5% tariff on Mexico, GOP backlash against Nvidia China sales.</li>
-          <li><strong>Legislative:</strong> Senate GOP health care plan vote Thursday. Moderate House Republicans introduce long-shot ACA subsidy extension bill.</li>
+          <li><strong>Market Tone:</strong> Mixed/Stalled. S&P 500 flat, Nasdaq slightly positive...</li>
+          <li><strong>Core Theme 1:</strong> Fed decision ahead...</li>
+          <li><strong>Core Theme 2:</strong> Geopolitical & trade friction rising...</li>
+          <li><strong>Legislative:</strong> Senate GOP health care plan vote Thursday...</li>
         </ul>
         
         <h3>Macro & Markets</h3>
-        <p>US equity markets are in a tight consolidation range (S&P -0.1%, Nasdaq +0.2%, Dow -0.4%) as positioning ahead of the Fed decision dominates price action. The lack of a strong directional move post-Trump's Nvidia China greenlight suggests the market views the policy as already priced or is more focused on monetary policy. JPMorgan's slide is idiosyncratic but highlights financial sector vulnerability to earnings disappointments in a high-rate environment.</p>
+        <p>US equity markets are in a tight consolidation range...</p>
       </div>
     </div>
   </section>
@@ -199,10 +196,10 @@
   <section class="cta-section">
     <button class="cta-button" onclick="triggerMailjet()">Subscribe</button>
 
-    <!-- Mailjet pop-up embed lives under the button, still hidden -->
+    <!-- Mailjet pop-up embed (YOUR CODE) -->
     <div class="form-container">
       <iframe
-        data-w-token="a19977e00b2d3f1c5e17"
+        data-w-token="8adff89747cb9aa9533a"
         data-w-type="pop-in"
         frameborder="0"
         scrolling="yes"
@@ -212,9 +209,10 @@
         width="100%"
         style="height: 0;"
       ></iframe>
+
       <iframe
         id="mailjet-trigger"
-        data-w-token="a19977e00b2d3f1c5e17"
+        data-w-token="8adff89747cb9aa9533a"
         data-w-type="trigger"
         frameborder="0"
         scrolling="no"
@@ -224,15 +222,16 @@
         width="100%"
         style="height: 0;"
       ></iframe>
+
       <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
     </div>
   </section>
   
   <script>
     function triggerMailjet() {
-      const trigger = document.getElementById('mailjet-trigger');
-      if (trigger && trigger.contentWindow) {
-        trigger.contentWindow.postMessage('open', '*');
+      const iframe = document.getElementById('mailjet-trigger');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage('open', '*');
       }
     }
   </script>
